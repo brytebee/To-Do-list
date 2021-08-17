@@ -1,13 +1,22 @@
-import _ from 'lodash';
 import './style.css';
 
-function component() {
-  const element = document.createElement('div');
+const itemList = [];
+const storeList = document.getElementById('listItem');
 
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+document.getElementById("addBtn").addEventListener("click", function() {
+  let item = document.getElementById('EnterItem').value;
+  itemList.push(item)
+  console.log(itemList);
+  showList();
+});
 
-  return element;
+const showList = () => {
+  let itemTotal = itemList.length;
+  let li = document.createElement('li');
+  for (let i = 0; i < itemTotal; i++) {
+    li.innerHTML = itemList[i];
+  }
+  storeList.appendChild(li);
 }
 
-document.body.appendChild(component());
+
