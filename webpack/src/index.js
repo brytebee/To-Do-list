@@ -15,6 +15,7 @@ const showList = () => {
   let li = document.createElement('li');
   for (let i = 0; i < itemTotal; i++) {
     li.innerHTML = itemList[i];
+    li.style.borderBottom = "thick solid #0000FF";
   }
   storeList.appendChild(li);
 }

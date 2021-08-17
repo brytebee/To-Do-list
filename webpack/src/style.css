@@ -1,7 +1,19 @@
 body {
+  text-align: center;
+  margin: 10% 30%;
   background-color: bisque;
 }
 
 h1 {
   color: blue;
+}
+
+#listItem {
+  list-style: none;
+  text-align: start;
+  padding-bottom: 2%;
+}
+
+#listItem li {
+  padding-left: 12%;
 }
