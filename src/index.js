@@ -3,35 +3,35 @@ import './style.css';
 const storeList = document.getElementById('list');
 
 const itemList = [
-  { 
+  {
     completed: false,
     description: 'Creae HTML file',
-    index: 5
+    index: 5,
   },
-  { 
+  {
     completed: false,
     description: 'Add CSS style',
-    index: 7
+    index: 7,
   },
-  { 
+  {
     completed: false,
     description: 'Bootstrapify elements',
-    index: 3
+    index: 3,
   },
-  { 
+  {
     completed: false,
     description: 'Clean up code',
-    index: 78
+    index: 78,
   },
-  { 
+  {
     completed: false,
     description: 'Make Submission',
-    index: 300
-  }
+    index: 300,
+  },
 ];
 
-const sortedList = itemList.sort(function (a, b) {
-  return a.index - b.index;
+const sortedList = itemList.sort((a, c) => {
+  return a.index - c.index;
 });
 
 const displaylist = () => {
@@ -41,7 +41,6 @@ const displaylist = () => {
     ${item.description}</div>`;
     li.classList.add('list-group-item');
     li.innerHTML = text;
-    li.style.bac
     storeList.appendChild(li);
   });
   const deleteButton = document.createElement('button');
@@ -49,8 +48,8 @@ const displaylist = () => {
   deleteButton.classList.add('list-group-item');
   deleteButton.classList.add('block');
   storeList.appendChild(deleteButton);
-}
+};
 
-document.addEventListener('DOMContentLoaded', (event) => {
+document.addEventListener('DOMContentLoaded', () => {
   displaylist();
 });
