@@ -1,26 +1,30 @@
 import './style.css';
 
-
 const storeList = document.getElementById('list');
 
 const itemList = [
-  { completed: false,
+  { 
+    completed: false,
     description: 'Creae HTML file',
     index: 5
   },
-  { completed: false,
+  { 
+    completed: false,
     description: 'Add CSS style',
     index: 7
   },
-  { completed: false,
+  { 
+    completed: false,
     description: 'Bootstrapify elements',
     index: 3
   },
-  { completed: false,
+  { 
+    completed: false,
     description: 'Clean up code',
     index: 78
   },
-  { completed: false,
+  { 
+    completed: false,
     description: 'Make Submission',
     index: 300
   }
