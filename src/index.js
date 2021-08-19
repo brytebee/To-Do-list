@@ -30,7 +30,11 @@ const itemList = [
   },
 ];
 
-const sortedList = itemList.sort( function(a, c) { return a.index - c.index; });
+/* eslint-disable */
+const sortedList = itemList.sort(function (a, c) { 
+  return a.index - c.index; 
+});
+/* eslint-enable */
 
 const displaylist = () => {
   sortedList.forEach((item) => {
