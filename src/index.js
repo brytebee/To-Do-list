@@ -30,7 +30,7 @@ const itemList = [
   },
 ];
 
-const sortedList = itemList.sort((a, c) => {
+const sortedList = itemList.sort(function(a, c) {
   return a.index - c.index;
 });
 
