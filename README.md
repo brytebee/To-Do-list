@@ -3,6 +3,9 @@
 
 > In this project, you will build a simple HTML list of To Do tasks. The list will be styled according to the specifications listed later in this lesson. This simple web page will be built using webpack and served by a webpack dev server.
 
+## Screenshot
+![image](https://user-images.githubusercontent.com/27709832/130029675-e2f8fb52-dc51-476e-be68-f59622978a6f.png)
+
 ## Built With
 
 - HTML5, CSS3(Bootstrap 5) and JS-DOM
