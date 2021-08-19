@@ -1,29 +1,52 @@
 import './style.css';
 
-const itemList = [];
-const storeList = document.getElementById('listItem');
 
-// let removeIndex = storeList.children;
+const storeList = document.getElementById('list');
 
-const showItem = () => {
-  const itemTotal = itemList.length;
-  const li = document.createElement('li');
-  for (let i = 0; i < itemTotal; i += 1) {
-    li.innerHTML = itemList[i];
-    li.style.borderBottom = 'thick solid #0000FF';
-    const removeBtn = document.createElement('button');
-    removeBtn.innerHTML = 'Delete';
-    li.appendChild(removeBtn);
+const itemList = [
+  { completed: false,
+    description: 'Creae HTML file',
+    index: 5
+  },
+  { completed: false,
+    description: 'Add CSS style',
+    index: 7
+  },
+  { completed: false,
+    description: 'Bootstrapify elements',
+    index: 3
+  },
+  { completed: false,
+    description: 'Clean up code',
+    index: 78
+  },
+  { completed: false,
+    description: 'Make Submission',
+    index: 300
   }
-  storeList.appendChild(li);
-};
+];
 
-document.getElementById('addBtn').addEventListener('click', () => {
-  const item = document.getElementById('EnterItem').value;
-  itemList.push(item);
-  showItem();
+const sortedList = itemList.sort(function (a, b) {
+  return a.index - b.index;
 });
 
-// const removeItem = () => {
-//   let newList = itemList.filter((id) = itemList.indexOf(id));
-// }
+const displaylist = () => {
+  sortedList.forEach((item) => {
+    const li = document.createElement('li');
+    const text = `<div> <input class='form-check-input me-2' type='checkbox' value='' aria-label='...'>
+    ${item.description}</div>`;
+    li.classList.add('list-group-item');
+    li.innerHTML = text;
+    li.style.bac
+    storeList.appendChild(li);
+  });
+  const deleteButton = document.createElement('button');
+  deleteButton.innerHTML = 'Clear all Completed';
+  deleteButton.classList.add('list-group-item');
+  deleteButton.classList.add('block');
+  storeList.appendChild(deleteButton);
+}
+
+document.addEventListener('DOMContentLoaded', (event) => {
+  displaylist();
+});

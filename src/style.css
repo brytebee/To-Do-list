@@ -1,19 +1,22 @@
 body {
+  background-color: rgb(83, 76, 81);
+}
+
+#clear {
+  margin-top: -20px;
+}
+
+#list > li:nth-of-type(odd) {
+  background-color: #51a86e;
+  color: rgb(255, 253, 253);
+}
+
+.block {
+  display: block;
+  width: 100%;
+  border: none;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
   text-align: center;
-  margin: 10% 30%;
-  background-color: bisque;
-}
-
-h1 {
-  color: blue;
-}
-
-#listItem {
-  list-style: none;
-  text-align: start;
-  padding-bottom: 2%;
-}
-
-#listItem li {
-  padding-left: 12%;
 }
