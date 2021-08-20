@@ -1,8 +1,5 @@
-/* eslint-disable */
-import { ourStore } from './index';
-/* eslint-enable */
-
 export default function status() {
+  const ourStore = JSON.parse(localStorage.getItem('storedItem'));
   const checks = Object.values(document.getElementsByName('status'));
   checks.forEach((element, i) => {
     element.addEventListener('click', () => {
@@ -10,9 +7,10 @@ export default function status() {
         ourStore[i].completed = true;
         (element.parentElement.style.textDecoration = 'underline line-through');
       } else {
-        console.log(ourStore[i].completed = false);
+        ourStore[i].completed = false;
         (element.parentElement.style.textDecoration = 'none');
       }
+      window.localStorage.setItem('storedItem', JSON.stringify(ourStore));
     });
   });
 }

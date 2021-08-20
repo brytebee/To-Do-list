@@ -1,9 +1,7 @@
 import './style.css';
-/* eslint-disable */
 import status from './status';
-/* eslint-enable */
 
-export const itemList = [
+const itemList = [
   {
     completed: false,
     description: 'Creae HTML file',
@@ -32,25 +30,35 @@ export const itemList = [
 ];
 
 /* eslint-disable */
-export const sortedList = itemList.sort(function (a, b) { 
+const sortedList = itemList.sort(function (a, b) { 
   return a.index - b.index; 
 });
 /* eslint-enable */
 
-window.localStorage.setItem('storedItem', JSON.stringify(sortedList));
-
-export const ourStore = JSON.parse(localStorage.getItem('storedItem'));
-
+if (! localStorage.getItem('storedItem')) {
+  window.localStorage.setItem('storedItem', JSON.stringify(sortedList));
+}
+ 
 const populate = () => {
+  let ourStore;
   const list = document.getElementById('list');
+  if (localStorage.getItem('storedItem') ) {
+    ourStore = JSON.parse(localStorage.getItem('storedItem'));
+  }
   ourStore.forEach((element, i) => {
     const div = document.createElement('div');
     const checkbox = document.createElement('input');
     const span = document.createElement('span');
+    if (element.completed) {
+      (div.style.textDecoration = 'underline line-through');
+    } else {
+      (div.style.textDecoration = 'none');
+    }
     checkbox.type = 'checkbox';
     checkbox.name = 'status';
     checkbox.id = `id${i}`;
     checkbox.value = 'value';
+    checkbox.checked = element.completed;
     div.append(checkbox);
     span.innerText = element.description;
     div.appendChild(span);
@@ -58,8 +66,5 @@ const populate = () => {
   });
 };
 
-document.addEventListener('DOMContentLoaded', () => {
-  populate();
-
-  status();
-});
+populate();
+status();
