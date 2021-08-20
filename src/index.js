@@ -1,5 +1,5 @@
 import './style.css';
-import { status } from "./status.js";
+import { status } from './status.js';
 
 export const itemList = [
   {
@@ -40,11 +40,11 @@ window.localStorage.setItem('storedItem', JSON.stringify(sortedList));
 export const ourStore = JSON.parse(localStorage.getItem('storedItem'));
 
 const populate = () => {
-  const list = document.getElementById('list')
+  const list = document.getElementById('list');
   ourStore.forEach((element, i) => {
     const div = document.createElement('div');
     const checkbox = document.createElement('input');
-    const span = document.createElement('span')
+    const span = document.createElement('span');
     checkbox.type = 'checkbox';
     checkbox.name = 'status';
     checkbox.id = `id${i}`;
@@ -56,10 +56,8 @@ const populate = () => {
   });
 };
 
-
 document.addEventListener('DOMContentLoaded', () => {
-  
-populate(); //research a recursive arrow function
+  populate(); //research a recursive arrow function
 
-status();
+  status();
 });
