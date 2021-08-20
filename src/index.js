@@ -30,14 +30,18 @@ export const itemList = [
 ];
 
 /* eslint-disable */
-const sortedList = itemList.sort(function (a, b) { 
+export const sortedList = itemList.sort(function (a, b) { 
   return a.index - b.index; 
 });
 /* eslint-enable */
 
+window.localStorage.setItem('storedItem', JSON.stringify(sortedList));
+
+export const ourStore = JSON.parse(localStorage.getItem('storedItem'));
+
 const populate = () => {
   const list = document.getElementById('list')
-  sortedList.forEach((element, i) => {
+  ourStore.forEach((element, i) => {
     const div = document.createElement('div');
     const checkbox = document.createElement('input');
     const span = document.createElement('span')
@@ -52,10 +56,10 @@ const populate = () => {
   });
 };
 
+
+document.addEventListener('DOMContentLoaded', () => {
+  
 populate(); //research a recursive arrow function
 
 status();
-
-document.addEventListener('DOMContentLoaded', () => {
-  const storedItem = JSON.parse(localStorage.getItem('storedItem'));
 });

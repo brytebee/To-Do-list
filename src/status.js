@@ -1,17 +1,18 @@
+import { ourStore } from "./index";
 
-
-const status = () => {
+export const status = () => {
     const checks = Object.values(document.getElementsByName('status'));
-    
-    checks.forEach(element => {
+    checks.forEach((element, i) => {
         element.addEventListener('click', () => {
           if (element.checked) {
-            element.parentElement.style.textDecoration = 'underline line-through';
+            ourStore[i].completed = true;
+            (element.parentElement.style.textDecoration = 'underline line-through');
+            alert('Task Completed!');
           } else {
-            element.parentElement.style.textDecoration = 'none';
+            console.log(ourStore[i].completed = false);
+            (element.parentElement.style.textDecoration = 'none');
+            alert('Completed Task Cancelled!');
           }
         });
     });
 }
-
-export { status };
