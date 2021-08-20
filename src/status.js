@@ -1,6 +1,8 @@
+/* eslint-disable */
 import { ourStore } from './index';
+/* eslint-enable */
 
-export const status = () => {
+const status = () => {
   const checks = Object.values(document.getElementsByName('status'));
   checks.forEach((element, i) => {
     element.addEventListener('click', () => {
@@ -15,4 +17,6 @@ export const status = () => {
       }
     });
   });
-}
+};
+
+export default { status };

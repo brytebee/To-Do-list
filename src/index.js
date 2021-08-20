@@ -1,5 +1,7 @@
 import './style.css';
+/* eslint-disable */
 import { status } from './status.js';
+/* eslint-enable */
 
 export const itemList = [
   {
@@ -57,7 +59,7 @@ const populate = () => {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  populate(); //research a recursive arrow function
+  populate();
 
   status();
 });
