@@ -1,5 +1,5 @@
 import './style.css';
-import { completed } from './status.js';
+import { status } from "./status.js";
 
 export const itemList = [
   {
@@ -54,16 +54,7 @@ const populate = () => {
 
 populate(); //research a recursive arrow function
 
-const checks = Object.values(document.getElementsByName('status'));
-checks.forEach(element => {
-  element.addEventListener('click', () => {
-    if (element.checked) {
-      element.parentElement.style.textDecoration = 'underline line-through';
-    } else {
-      element.parentElement.style.textDecoration = 'none';
-    }
-  });
-});
+status();
 
 document.addEventListener('DOMContentLoaded', () => {
   const storedItem = JSON.parse(localStorage.getItem('storedItem'));
