@@ -1,4 +1,5 @@
 import './style.css';
+// import status from './status.js';
 
 const storeList = document.getElementById('list');
 
@@ -31,27 +32,31 @@ const itemList = [
 ];
 
 /* eslint-disable */
-const sortedList = itemList.sort(function (a, c) { 
-  return a.index - c.index; 
+const sortedList = itemList.sort(function (a, b) { 
+  return a.index - b.index; 
 });
 /* eslint-enable */
 
-const displaylist = () => {
-  sortedList.forEach((item) => {
-    const li = document.createElement('li');
-    const text = `<div> <input class='form-check-input me-2' type='checkbox' value='' aria-label='...'>
-    ${item.description}</div>`;
-    li.classList.add('list-group-item');
-    li.innerHTML = text;
-    storeList.appendChild(li);
+const populate = () => {
+  const list = document.getElementById('list')
+  sortedList.forEach((element, i) => {
+    const div = document.createElement('div');
+    const checkbox = document.createElement('input');
+    const span = document.createElement('span')
+    checkbox.type = 'checkbox';
+    checkbox.name = 'status';
+    checkbox.id = `id${i}`;
+    checkbox.value = 'value';
+    div.append(checkbox);
+    span.innerText = element.description;
+    div.appendChild(span);
+    list.appendChild(div);
   });
-  const deleteButton = document.createElement('button');
-  deleteButton.innerHTML = 'Clear all Completed';
-  deleteButton.classList.add('list-group-item');
-  deleteButton.classList.add('block');
-  storeList.appendChild(deleteButton);
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  displaylist();
+  populate();
+
+  document.getElementById('id0').addEventListener('click', () => console.log('Hi'));
+  
 });
