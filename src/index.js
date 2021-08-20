@@ -1,6 +1,6 @@
 import './style.css';
 /* eslint-disable */
-import { status } from './status.js';
+import status from './status';
 /* eslint-enable */
 
 export const itemList = [

@@ -2,7 +2,7 @@
 import { ourStore } from './index';
 /* eslint-enable */
 
-const status = () => {
+export default function status() {
   const checks = Object.values(document.getElementsByName('status'));
   checks.forEach((element, i) => {
     element.addEventListener('click', () => {
@@ -18,5 +18,3 @@ const status = () => {
     });
   });
 };
-
-export default { status };
