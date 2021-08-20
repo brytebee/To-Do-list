@@ -52,16 +52,19 @@ const populate = () => {
   });
 };
 
-document.addEventListener('DOMContentLoaded', () => {
-  populate();
-  const checks = Object.values(document.getElementsByName('status'));
-  checks.forEach(element => {
-    element.addEventListener('click', () => {
-      if (element.checked) {
-        console.log(!completed());
-      } else {
-        console.log(completed());
-      }
-    });
+populate(); //research a recursive arrow function
+
+const checks = Object.values(document.getElementsByName('status'));
+checks.forEach(element => {
+  element.addEventListener('click', () => {
+    if (element.checked) {
+      element.parentElement.style.textDecoration = 'underline line-through';
+    } else {
+      element.parentElement.style.textDecoration = 'none';
+    }
   });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const storedItem = JSON.parse(localStorage.getItem('storedItem'));
 });
