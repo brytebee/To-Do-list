@@ -1,9 +1,7 @@
 import './style.css';
-// import status from './status.js';
+import { completed } from './status.js';
 
-const storeList = document.getElementById('list');
-
-const itemList = [
+export const itemList = [
   {
     completed: false,
     description: 'Creae HTML file',
@@ -56,7 +54,14 @@ const populate = () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   populate();
-
-  document.getElementById('id0').addEventListener('click', () => console.log('Hi'));
-  
+  const checks = Object.values(document.getElementsByName('status'));
+  checks.forEach(element => {
+    element.addEventListener('click', () => {
+      if (element.checked) {
+        console.log(!completed());
+      } else {
+        console.log(completed());
+      }
+    });
+  });
 });
