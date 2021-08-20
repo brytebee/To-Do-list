@@ -9,12 +9,10 @@ export default function status() {
       if (element.checked) {
         ourStore[i].completed = true;
         (element.parentElement.style.textDecoration = 'underline line-through');
-        alert('Task Completed!');
       } else {
         console.log(ourStore[i].completed = false);
         (element.parentElement.style.textDecoration = 'none');
-        alert('Completed Task Cancelled!');
       }
     });
   });
-};
+}
