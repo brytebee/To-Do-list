@@ -1,5 +1,5 @@
 import './style.css';
-import status from './status';
+import status from './status.js';
 
 const itemList = [
   {
@@ -35,14 +35,14 @@ const sortedList = itemList.sort(function (a, b) {
 });
 /* eslint-enable */
 
-if (! localStorage.getItem('storedItem')) {
+if (!localStorage.getItem('storedItem')) {
   window.localStorage.setItem('storedItem', JSON.stringify(sortedList));
 }
- 
+
 const populate = () => {
   let ourStore;
   const list = document.getElementById('list');
-  if (localStorage.getItem('storedItem') ) {
+  if (localStorage.getItem('storedItem')) {
     ourStore = JSON.parse(localStorage.getItem('storedItem'));
   }
   ourStore.forEach((element, i) => {
