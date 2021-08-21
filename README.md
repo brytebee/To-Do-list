@@ -12,7 +12,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://github.com/brytebee/To-Do-list/)
+[Live Demo Link]()
 
 
 ### Prerequisites
